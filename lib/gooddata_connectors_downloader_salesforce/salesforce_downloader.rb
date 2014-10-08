@@ -1,7 +1,7 @@
 module GoodData
   module Connectors
     module Downloader
-      class SalesforceDownloader < GoodData::Connectors::Downloader::BaseDownloader
+      class SalesforceDownloader < GoodData::Connectors::Base::BaseDownloader
 
         attr_accessor :client,:bulk_client
 
@@ -99,6 +99,11 @@ module GoodData
 
           end
           return downloaded_info
+        end
+
+        def is_file_empty(filename)
+          # usually it says "Records not found for this query" on one line
+          return (File.size(filename) < 60) && (IO.read(filename).count("\n") == 0)
         end
 
         private

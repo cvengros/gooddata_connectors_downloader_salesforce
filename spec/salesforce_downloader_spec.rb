@@ -31,7 +31,7 @@ describe GoodData::Connectors::Downloader::SalesforceDownloader do
         }
         downloader = GoodData::Connectors::Downloader::SalesforceDownloader.new(nil, params)
         # run it
-        result = downloader.run
+        result = downloader.run['local_files']['salesforce']
 
         # server should be there
         result['meta']['salesforce_server'].should_not be_empty
