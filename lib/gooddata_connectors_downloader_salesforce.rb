@@ -3,8 +3,8 @@ require "gooddata"
 require 'restforce'
 require 'salesforce_bulk_query'
 
-require "gooddata_connectors_downloader_salesforce/version"
-require "gooddata_connectors_downloader_salesforce/salesforce_downloader"
+require_relative "gooddata_connectors_downloader_salesforce/version"
+require_relative "gooddata_connectors_downloader_salesforce/salesforce_downloader"
 
 module GoodData
   module Connectors
